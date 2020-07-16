@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/admin/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="/styles/calendar/stylesheet.css">
+	<link rel="icon" href="/images/icon/011logo.png">
+<body>
+	<div class="body-wrapper">
+		<header class="side-bar">
+			<label class="logo">
+				<img src="/images/icon/011logo.png">
+			</label>
+			<label class="system-name">
+					Event Management System
+				</label>
+			<ul>
+				<li ><a href="/011entertainment/dashboard">Dashboard</a></li>
+				<li><a href="/011entertainment/events">Events</a></li>
+				<li><a href="/011entertainment/users">Users</a></li>
+				<li><a class="active" href="/011entertainment/calendar">Calendar</a></li>
+				<li><a href="/011entertainment/settings">Settings</a></li>
+			</ul>
+		</header>
+		<div class="main-container">
+			<div class="top-bar">
+				<label class="system-name">
+					Event Management System
+				</label>
+				<ul>
+					<li>
+						<span class="reg-btn">
+							Create New 	Event
+						</span>
+					</li>
+					<li class="icon">
+						<div class="menu">
+							+
+						</div>
+					</li>
+				</ul>	
+			</div>
+			<div class="main-content">
+				<p class="page-name">Calendar</p>
+				<div class="dashboard-container">
+					<div class="calendar">
+						<div class="month">
+							<div class="prev">
+								<span>&#10094;</span>
+							</div>
+							<div>
+								<h2>June</h2>
+								<p>Sat Jun 01 2019</p>
+							</div>
+							<div class="next">
+								<span>&#10095;</span>
+							</div>
+						</div>
+						<div class="weekends">
+							<div>Sun</div>
+							<div>Mon</div>
+							<div>Tue</div>
+							<div>Wed</div>
+							<div>Thu</div>
+							<div>Fri</div>
+							<div>Sat</div>
+						</div>
+						<div class="days">
+							<div>26</div>
+							<div>27</div>
+							<div>28</div>
+							<div>29</div>
+							<div>30</div>
+							<div>31</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-bg">
+			<div class="modal">
+				<span class="close-btn">&#10005;</span>
+				<h2>Register For The Event</h2>
+				<label for="name">Full Name</label>
+				<input type="text" name="Name">
+				<label for="email">Email</label>
+				<input type="email" name="Email">
+				<span class="modal-btn">Register</span>
+			</div>
+		</div>
+		<footer></footer>
+	</div>
+	<script type="text/javascript" src="/scripts/admin-page.js"></script>
+	<script type="text/javascript" src="/scripts/calendar-page.js"></script>
+</body>
+</html>

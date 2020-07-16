@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/*Global styles*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #ead7d5;
+}
+header a {
+	color: #000;
+}
+
+.reg-btn,
+.modal-btn {
+	text-transform: uppercase;
+	background: #000;;
+	border: none;
+	border-radius: 1px;
+	padding: 12px 20px;
+	min-width: 200px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #ead7d5;
+	text-align: center;
+}
+ header {
+ 	 height: 115px;
+ 	 width: 100%;
+ 	 position: absolute;
+ }
+
+ label.logo {
+ 	padding: 0 100px;
+ 	line-height: 80px;
+ }
+
+header ul {
+	float: right;
+	margin-right: 40px;
+	margin-top: 20px;
+}
+
+label img {
+	max-width: 100%;
+	max-height: 100%;
+	animation: slideDown 1.3s ease-in;
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-250px);
+	}
+	20% {
+		transform: translateY(-200px);
+	}
+	40% {
+		transform: translateY(-150px);
+	}
+	60% {
+		transform: translateY(-100px);
+	}
+	80% {
+		transform: translateY(-50px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+header li {
+	display: inline-block;
+	margin: 0 8px;
+	line-height: 80px;	
+}
+
+header a, span.rgb-btn {
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	font-size: 18px;
+	padding: 7px 10px;
+	border-radius: 1px;
+}
+
+a.active, a:hover {
+	color: #ead7d5;
+	background: #000;
+	transition: .5s;
+}
+
+header .icon {
+	font-family: sans-serif;
+	font-size: 40px;
+	line-height: 80px;
+	float: right;
+	margin-right: 40px;
+	cursor: pointer;
+	margin-top: 20px;
+	display: none;
+}
+
+img.search-icon {
+	width: 20px;
+	height: 20px;
+	margin-bottom: -4px;
+}
+
+
+.login-container {
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+.form-container {
+	margin-top: 5px;
+	width: 300px;
+	height: 280px;
+	background: #fff;
+	text-align: center;
+}
+
+.form-name {
+	font-size: 2.7rem;
+	margin-bottom: 13px;
+}
+.field-wrapper {
+	justify-content: center;
+	align-items: center;
+	line-height: 40px;
+}
+
+.input-container {
+	margin-top: 15px;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 13px;
+}
+
+.input-container input {
+	width: 100%;
+	height: 100%;
+	padding: 5px 0;
+	font-size: 13px;
+	color: #333;
+	border: none;
+	outline: none;
+	font-family: poppins;
+	transition: 0.5s ease-in-out;
+}
+
+.error {
+	font-size: 11px;
+	color: red;
+	height: 36px;
+}
+.input-container input:hover {
+	font-size: 15px
+}
+.input-container {
+	border: 1px solid #ce9a9a;
+}
+.input-container span {
+	left: 0;
+	position: absolute;
+
+}
+
+.submit-btn {
+	padding: 8px 20px;
+	font-size: 1rem;
+	background: #ead7d5;
+	font-family: poppins;
+	border: none;
+	transition: 0.5s ease-in-out;
+}
+
+.submit-btn:hover {
+	color: #ead7d5;
+	background: #000;
+}
+body > div > div > form > div > div:nth-child(2) {
+	margin-bottom: 0px;
+}
+@media (max-width: 1048px) {
+	label.logo {
+		padding-left: 32px;
+	}
+
+	header ul {
+		margin-right: 20px;
+	}
+
+	header a {
+		font-size: 17px;
+	}
+}
+
+@media  (max-width: 909px) {
+	label.logo {
+	    padding: 0 45px;
+	    line-height: 80px;
+	}
+
+	header {
+	    height: 89px;
+	    width: 100%;
+	}
+	header .icon {
+		display: block;
+		margin-top: 10px;
+		transition: 0.5s;
+	}
+
+	header ul {
+		position: fixed;
+		width: 100% ;
+		height: 100vh;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all	.5s;
+		background: #ead7d5;	
+		transition: 0.5s ease-in-out;
+	}
+
+	header li {
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+
+	a.active, a:hover {
+		
+	}
+
+	header ul.show {
+		left: 0;
+		background: #ead7d5
+		;
+	}
+
+	.icon-active {
+		transform: rotate(45deg)
+	}
+	img.slide {
+		height: auto
+	}
+	.slide-frame {
+		height: auto;
+	}
+
+}

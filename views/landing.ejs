@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>011Entertainment</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="/styles/landing/stylesheet.css">
+	<link rel="icon" href="./images/icon/011logo.png">
+<body>
+	<header>
+		<label class="logo">
+			<img src="/images/icon/011logo.png">
+		</label>
+		<ul>
+			<li ><a class="active" href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Sign In</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Feedback</a></li>
+		</ul>
+		<label class="icon">
+			<div class="menu">
+				+
+			</div>
+		</label>
+	</header>
+	<div class="main-event-container" style="
+		background: url('/uploads/<%=result[0].main%>'); 
+		background-size: cover; 
+		background-position: center center;
+  		background-repeat: no-repeat;">
+		<div class="event-container">
+			<h1 class="event-name">
+				<%=result[0].title%>
+			</h1> 
+			<p class="main-desription"><%=result[0].description%> | <%=result[0].location%></p>
+			<p class="main-date"><%=result[0].day%> <%=result[0].month%> <%=result[0].year%></p>
+			<p class="main-time"><%=result[0].time%></p>
+			<span class="detail">Event Starts In</span>
+			<div class="count">
+				<div class="countd">
+					<span id="days">00</span>
+					DAYS
+				</div>
+				<div class="countd">
+					<span id="hours">00</span>
+					HOURS
+				</div>
+				<div class="countd">
+					<span id="minutes">00</span>
+					MINUTES
+				</div>
+				<div class="countd">
+					<span id="seconds">00</span>
+					SECONDS
+				</div>
+			</div>
+			<p class="identify"><%=result[0].title%></p>
+			<span class="main-btn">
+				COMING
+			</span>
+		</div>
+	</div>
+	<div class="divider">
+			<h1>Upcoming Events</h1>
+			<p>All happening in <span id="month">May</span></p>
+	</div>
+	<div class="upcoming-container">
+		<div class="upcoming-images">
+			<%
+				for ( let i = 1; i  < result.length; i++) { %>
+					<div class="img-wrapper" style="background-image: url('/uploads/<%=result[i].display%>');">
+						<p class="date-desription"><%=result[i].day%> <%=result[i].month%></p>
+						<div class="description">
+							<div class="desc-content">
+								<h4 class="name"><%=result[i].title%></h4>
+								<div class="more-info">
+									<h5 class="price">R<%=result[i].price%></h5>
+									<p><%=result[i].description%> | <%=result[i].location%></p>
+								</div>
+								<div class="btn-container">
+									<p class="identify"><%=result[i].title%></p>
+									<span class="reg-btn">
+										COMING
+									</span>
+								</div>
+							</div>
+						</div>	
+					</div>
+
+			<%}%>
+	</div>
+	<div class="divider">
+	</div>
+	<div class="events-container">
+			<h2 class="text-one">Coming soon</h2>
+		<div class="slide-frame">
+			<figure>
+				<img class="active-img" src="/images/011/event1.jpg">
+				<img class="inactive-img" src="/images/011/event2.jpg">
+				<img class="inactive-img" src="/images/011/event3.jpg">
+				<img class="inactive-img" src="/images/011/event4.jpg">
+				<img class="inactive-img" src="/images/011/event5.jpg">
+			</figure>
+		</div>
+	</div>
+	<div class="divider">
+	</div>
+	<div class="modal-bg">
+		<div class="modal">
+			<div class="login-container">
+				<div class="form-container">
+					<span class="close-btn">&#10005;</span>
+					<div class="form-name">
+						Register For Event
+					</div>
+					<form id="Form" action="https://sandbox.payfast.co.za/eng/process" method="POST">
+						<div class="field-wrapper">
+
+							<input type="hidden" name="amount" value="100.00">
+							<input type="hidden" name="item_name" value="Test Item">
+							<input type="hidden" name="item_description" value="A test product">
+							<input type="hidden" name="custom_int1" value="2">
+							<input type="hidden" name="custom_str1" value="Extra order information">
+
+							<input class="identify event" type="text" name="Event" placeholder="Event" required>
+							<div class="input-container">
+								<input class="fullname" type="text" name="name_first" placeholder="Firstname" required>
+							</div>
+							<div class="input-container">
+								<input class="fullname" type="text" name="name_last" placeholder="Lastname" required>
+							</div>
+							<div class="input-container">
+								<input type="email"  class="email" name="email_address" placeholder="Email" required>
+							</div>
+							<input type="hidden" name="merchant_id" value="10000100">
+							<input type="hidden" name="merchant_key" value="46f0cd694581a">
+							<input type="hidden" name="return_url" value="http://57f6fefda78f.ngrok.io/">
+							<input type="hidden" name="cancel_url" value="http://57f6fefda78f.ngrok.io/">
+							<input type="hidden" name="notify_url" value="http://57f6fefda78f.ngrok.io/">
+							<input type="hidden" name="payment_method" value="cc">
+							<div class="option-container">
+								<input 
+									class="gender" 
+									type="radio" 
+									name="Gender" id="Male" 
+									value="Male"
+									 >
+								<label class="radio-button" for="Male">
+									Male
+								</label>
+							</div>
+							<div class="option-container">
+								<input 
+									class="gender" 
+									type="radio" 
+									name="Gender" 
+									id="Female" 
+									value="Female"
+									 >
+								<label class="radio-button" for="Female" id="Female">
+									Female
+								</label>
+							</div>
+							<div class="option-container">
+								<input 
+									class="gender" 
+									type="radio" 
+									name="Gender" 
+									id="Other" 
+									value="Other">
+								<label class="radio-button" for="Other" id="other">
+									Other
+								</label>
+							</div>
+							<div class="error">
+								<p class="message"><%= typeof error != 'undefined' ? error : ''%></p>
+							</div>
+							<div class="btn-container">		
+								<button type="submit" class="submit-btn"> 
+									submit
+								</button>
+							</div>
+						
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/scripts/landing-page.js"></script>
+</body>
+</html>

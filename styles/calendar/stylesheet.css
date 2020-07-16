@@ -1,0 +1,28 @@
+.dashboard-container {
+	display: flex;
+}
+
+.calendar {
+	margin: auto;
+	width: 90%;
+	height: auto;
+	background: #fff;
+}
+
+.weekends,
+.month {
+	width: 100%;
+	display: flex;
+	background-color: #2ecc71;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+.weekends {
+
+}
+
+.weekends div{
+	width: 14.28%;
+}

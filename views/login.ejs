@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>011Entertainment</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="/styles/login/stylesheet.css">
+	<link rel="icon" href="./images/icon/011logo.png">
+<body>
+	<header>
+		<label class="logo">
+			<img src="/images/icon/011logo.png">
+		</label>
+		<ul>
+			<li ><a class="active" href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Sign In</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Feedback</a></li>
+		</ul>
+		<label class="icon">
+			<div class="menu">
+				+
+			</div>
+		</label>
+	</header>
+	<div class="login-container">
+		<div class="form-container">
+			<div class="form-name">
+				Login
+			</div>
+			<form action="/011entertainment/login" method="POST">
+				<div class="field-wrapper">
+					<div class="input-container">
+						<input class="username" type="text" name="userName" placeholder="Username or Email" value="<%= typeof body.userName != 'undefined' ? body.userName : ''%>" required>
+					</div>
+					<div class="input-container">
+						<input class="password" type="password" name="password" placeholder="Password" value="<%= typeof body.password  != 'undefined' ? body.password : ''%>" required>
+					</div>
+					<div class="error">
+						<p class="message"><%= typeof error != 'undefined' ? error : ''%></p>
+					</div>
+					<div class="btn-container">		
+						<button class="submit-btn"> 
+							submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+		<script type="text/javascript" src="/scripts/login-page.js"></script>
+</body>
+</html>
