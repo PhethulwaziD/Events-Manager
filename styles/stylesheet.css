@@ -108,6 +108,57 @@ img.search-icon {
 	margin-bottom: -4px;
 }
 
+footer {
+	background-color: #000;
+	color: #ead7d5;
+	width:100%;
+	display: flex;
+}
+
+div.left-down {
+	padding-left: 3.2em;
+}
+
+footer > div div h3 {
+	font-size: 22px;
+}
+
+div.right-up {
+	display: flex
+}
+
+div.f-logo {
+	height: 215px;
+    width: 330px;
+}
+
+div.f-logo img.p-logo {
+	max-width: 100%;
+    max-height: 100%;
+}
+
+div.s-media {
+	display:flex;
+	align-items: center;
+	margin-top: 13px;
+	margin-bottom: 10px;
+}
+
+div.s-icon {
+	height: 35px;
+	width: 35px;
+}
+img.s-image {
+	max-width: 100%;
+    max-height: 100%;
+}
+footer  div div a {
+	color: #ead7d5;
+}
+
+a.s-name {
+	margin-left: 5px;
+}
 
 @media (max-width: 1048px) {
 	label.logo {
@@ -156,13 +207,12 @@ img.search-icon {
 		line-height: 30px;
 	}
 
-	a.active, a:hover {
+	/* a.active, a:hover {
 		
-	}
+	} */
 
 	header ul.show {
 		left: 0;
-		background: rgba(0, 0, 0, 0.5);
 	}
 
 	.icon-active {

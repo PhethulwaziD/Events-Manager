@@ -2,8 +2,8 @@ const modalBtn = document.querySelectorAll('.reg-btn');
 const modalBg = document.querySelector('.modal-bg');
 const closeBtn = document.querySelector('.close-btn');
 const month = document.querySelector('#month');
-const mainDate = document.querySelector('.main-date').textContent;
-const mainTime = document.querySelector('.main-time').textContent;
+let mainDate = document.querySelector('.main-date');
+let mainTime = document.querySelector('.main-time');
 const menuBtn = document.querySelector('.icon');
 const sideBar = document.querySelector('header ul');
 
@@ -19,34 +19,36 @@ menuBtn.addEventListener('click', () => {
  	menuBtn.classList.toggle('icon-active');
 });
 
-
-
-
 closeBtn.addEventListener('click', (element) => {
 	modalBg.classList.remove('bg-active');
 });
-const m = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-month.textContent =  m[new Date().getMonth()];
 
-let count  = new Date(mainDate+" " +mainTime+":00").getTime();
-let x = setInterval(() => {
-	let now = new Date().getTime();
-	let d = count - now;
+if (mainDate != null && mainTime != null){
+	mainDate = mainDate.textContent;
+	mainTime = mainTime.textContent;
+	const m = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+	if (month != null)
+		month.textContent =  m[new Date().getMonth()];
 
-	let days = Math.floor(d/(1000*60*60*24));
-	let hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
-	let minutes = Math.floor((d%(1000*60*60))/(1000*60))
-	let seconds = Math.floor((d%(1000*60))/1000);
-	document.querySelector('#days').textContent = days;
-	document.querySelector('#hours').textContent = hours;
-	document.querySelector('#minutes').textContent = minutes;
-	document.querySelector('#seconds').textContent = seconds;
+	let count  = new Date(mainDate+" " +mainTime+":00").getTime();
+	let x = setInterval(() => {
+		let now = new Date().getTime();
+		let d = count - now;
 
-	if (d <= 0) {
-		clearInterval(x);
-	}
-}, 1000);
+		let days = Math.floor(d/(1000*60*60*24));
+		let hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+		let minutes = Math.floor((d%(1000*60*60))/(1000*60))
+		let seconds = Math.floor((d%(1000*60))/1000);
+		document.querySelector('#days').textContent = days;
+		document.querySelector('#hours').textContent = hours;
+		document.querySelector('#minutes').textContent = minutes;
+		document.querySelector('#seconds').textContent = seconds;
 
+		if (d <= 0) {
+			clearInterval(x);
+		}
+	}, 1000);
+}
 
 //Form Action
 

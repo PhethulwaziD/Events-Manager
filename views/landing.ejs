@@ -25,6 +25,14 @@
 			</div>
 		</label>
 	</header>
+	<% if (result.length === 0) {%>
+		<div class="main-event-container" style="
+			background: url('/imagess/event2.jpg'); 
+			background-size: cover; 
+			background-position: center center;
+			background-repeat: no-repeat;">	
+	</div>
+	<% } else {%>
 	<div class="main-event-container" style="
 		background: url('/uploads/<%=result[0].main%>'); 
 		background-size: cover; 
@@ -62,14 +70,15 @@
 			</span>
 		</div>
 	</div>
-	<div class="divider">
-			<h1>Upcoming Events</h1>
-			<p>All happening in <span id="month">May</span></p>
-	</div>
-	<div class="upcoming-container">
-		<div class="upcoming-images">
-			<%
-				for ( let i = 1; i  < result.length; i++) { %>
+	<%}%>
+	<% if (result.length > 1) {%>
+		<div class="divider">
+				<h1>Upcoming Events</h1>
+				<p>All happening in <span id="month">May</span></p>
+		</div>
+		<div class="upcoming-container">
+			<div class="upcoming-images">
+				<% for ( let i = 1; i  < result.length; i++) { %>
 					<div class="img-wrapper" style="background-image: url('/uploads/<%=result[i].display%>');">
 						<p class="date-desription"><%=result[i].day%> <%=result[i].month%></p>
 						<div class="description">
@@ -88,22 +97,11 @@
 							</div>
 						</div>	
 					</div>
-
-			<%}%>
+				<%}%>
+			</div>
+		<%}%>
 	</div>
 	<div class="divider">
-	</div>
-	<div class="events-container">
-			<h2 class="text-one">Coming soon</h2>
-		<div class="slide-frame">
-			<figure>
-				<img class="active-img" src="/images/011/event1.jpg">
-				<img class="inactive-img" src="/images/011/event2.jpg">
-				<img class="inactive-img" src="/images/011/event3.jpg">
-				<img class="inactive-img" src="/images/011/event4.jpg">
-				<img class="inactive-img" src="/images/011/event5.jpg">
-			</figure>
-		</div>
 	</div>
 	<div class="divider">
 	</div>
@@ -182,13 +180,60 @@
 									submit
 								</button>
 							</div>
-						
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+	<footer>
+		<div class="left-select">
+			<div class="f-logo">
+				<img class="p-logo" src="/images/icon/011logo.png">
+			</div>
+			<div class="left-down">
+				<h3>Follow Us</h3>
+				<div class="s-media"><div class="s-icon"><img class="s-image" src="/images/icon/Twitter.png" alt=""></div><a class="s-name" href="">Twitter</a></div>
+				<div class="s-media"><div class="s-icon"><img class="s-image" src="/images/icon/Instagram.png" alt=""></div><a class="s-name" href="">Instagram</a></div>
+				<div class="s-media"><div class="s-icon"><img class="s-image" src="/images/icon/Facebook.png" alt=""></div><a class="s-name" href="">Facebook</a></div>
+			</div>
+		</div>
+		<div class="right-select">
+			<div class="right-up">
+				<div class="comp-sect">
+					<ul>
+						<h3>Company</h3>
+						<li><a href="#">Teams</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Support</a></li>
+					</ul>
+				</div>
+				<div class="about-sect">
+					<ul>
+						<h3>About</h3>
+						<li><a href="#">Team & Company</a></li>
+						<li><a href="#">Location</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Our Services</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="right-down">
+				<ul>
+					<h3>Contact</h3>
+					<li><p>072 182 1455</p></li>
+					<li><p>tyrone@011Entertainment.co.za</p></li>
+				</ul>
+				<ul>
+					<h3>Location</h3>
+					<li><p>51 Bishops Square Cnr</p></li>
+					<li><p>6th Road and Leogen Place</p></li>
+					<li><p>Midrand Johannesburg</p></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 	<script type="text/javascript" src="/scripts/landing-page.js"></script>
 </body>
 </html>
